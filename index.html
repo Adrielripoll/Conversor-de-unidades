@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Conversor de Unidades</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/LOGO.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+	
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/bb641e22f7.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto"></div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/teste logo 3.png" alt=""></a>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Cotações</a></li>
+          <li class="drop-down"><a href="">Conversores</a>
+            <ul>
+              <li><a href="#">Outras conversões em breve</a></li>
+              <li><a href="#">Outras conversões em breve</a></li>
+              <li><a href="#">Outras conversões em breve</a></li>
+              <li><a href="#">Outras conversões em breve</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <form name="forml" id="forml">
+      <section id="featured-services" class="featured-services">
+        <div class="container" data-aos="fade-up">
+		      <div class="section-title">
+            <h2>Cotações</h2>
+            <p>Cotações no dia <div id="dataAgora"></div></p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 align-items-stretch mb-5 mb-lg-0" style="cursor: pointer;">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-dollar-sign"></i><span class="moedas"><b>Dólar</b></span></div>
+              <input type="text" id="campo_dolar" name="campo_dolar" class="form-control money" autocomplete="off" value="1,00" onblur="zerar_dolar()" onkeypress="convert_dolar(); "><br>
+			        <span class="title"><div id="dolar" style="font-size: 27px;"><img src="./assets/img/load.gif" style="width: 30px; height: auto;"></div></span>
+              <p class="description">Dólar Americano / Real Brasileiro</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 align-items-stretch mb-5 mb-lg-0" style="cursor: pointer;">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-euro-sign"></i><span class="moedas"><b>Euro</b></span></div>
+            <input type="text" id="campo_euro" name="campo_euro" class="form-control" autocomplete="off" value="1,00" onblur="zerar_euro();" onkeypress="convert_euro(); return(MascaraMoeda(this,'.',',',event)); "><br>
+            <span class="title"><div id="euro" style="font-size: 27px;"><img src="./assets/img/load.gif" style="width: 30px; height: auto;"></div></span>
+            <p class="description">Cotação Euro / Real Brasileiro</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 align-items-stretch mb-5 mb-lg-0" style="cursor: pointer;">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="fab fa-bitcoin"></i> <span class="moedas"><b>Bitcoin</b></span></div>
+            <input type="text" id="campo_bitcoin" name="campo_bitcoin" class="form-control" autocomplete="off" value="1,00" onblur="zerar_bitcoin();" onkeypress="convert_bitcoin(); return(MascaraMoeda(this,'.',',',event)); "><br>
+            <span class="title"><div id="bit" style="font-size: 27px;"><img src="./assets/img/load.gif" style="width: 30px; height: auto;"></div></span>
+            <p class="description">Cotação Bitcoin / Real Brasileiro</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 align-items-stretch mb-5 mb-lg-0" style="cursor: pointer;">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="fab fa-ethereum"></i> <span class="moedas"><b>Ethereum</b></span></div>
+            <input type="text" id="campo_ethereum" name="campo_ethereum" class="form-control" autocomplete="off" value="1,00" onblur="zerar_ethereum();" onkeypress="convert_ethereum(); return(MascaraMoeda(this,'.',',',event)); "><br>
+            <span class="title"><div id="eth" style="font-size: 27px;"><img src="./assets/img/load.gif" style="width: 30px; height: auto;"></div></span>
+            <p class="description">Cotação Ethereum / Real Brasileiro</p>
+          </div>
+        </div>
+
+      </div><BR>
+      <div class="row" style="border:#999 1px solid;">
+        <div class="col-md-12">
+            <h2>anuncio</h2>
+        </div>
+      </div>
+      <BR>
+      <div class="row" style="border:#999 1px solid;">
+        <div class="col-md-12">
+            <h2>anuncio</h2>
+        </div>
+      </div>
+      <BR><BR><BR>
+      <div class="row" style="border:#999 1px solid;">
+        <div class="col-md-12">
+            <h2>.</h2>
+        </div>
+      </div>
+    </section>
+
+    <input type="hidden" id="cotacao_euro" name="cotacao_euro">
+    <input type="hidden" id="cotacao_dolar" name="cotacao_dolar">
+    <input type="hidden" id="cotacao_bitcoin" name="cotacao_bitcoin">
+    <input type="hidden" id="cotacao_ethereum" name="cotacao_ethereum">
+  </form>
+    <!-- End Featured Services Section -->
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!--Script Cotação-->
+  <script>
+    
+    $(document).ready(function () {
+		$(function(){
+			$(".money").maskMoney({symbol:'', 
+			showSymbol:true, thousands:'.', decimal:',', symbolStay: true});
+		 })
+	
+      $.post('api/dolar.php', function(dolar){
+      $('#dataAgora').load('api/data.php');
+      
+      $("#dolar").html("R$ " + dolar);
+      $("#cotacao_dolar").val(dolar);
+      });
+      
+
+      $.post('api/euro.php', function(euro){
+      $("#euro").html("R$ " + euro);
+      $("#cotacao_euro").val(euro);
+      });
+
+      $.post('api/bitcoin.php', function(bitcoin){
+      $("#bit").html("R$ " + bitcoin);
+      $("#cotacao_bitcoin").val(bitcoin);
+      });
+
+      $.post('api/ethereum.php', function(ethereum){
+      $("#eth").html("R$ " + ethereum);
+      $("#cotacao_ethereum").val(ethereum);
+      });
+
+    
+    });
+  </script>
+  <script>
+    var intervalo_dolar = setInterval(function(){
+      $('#dolar').load('api/dolar.php');
+      $('#euro').load('api/euro.php');
+      $('#bit').load('api/bitcoin.php');
+      $('#eth').load('api/ethereum.php');
+
+    }, 60000 * 15);
+
+    var intervalo_data = setInterval(function(){
+      $('#dataAgora').load('api/data.php');
+    
+    }, 60000);
+  </script>
+   <script>
+    function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){
+        var sep = 0;
+        var key = '';
+        var i = j = 0;
+        var len = len2 = 0;
+        var strCheck = '0123456789';
+        var aux = aux2 = '';
+        var whichCode = (window.Event) ? e.which : e.keyCode;
+        if (whichCode == 13) return true;
+        key = String.fromCharCode(whichCode); // Valor para o código da Chave
+        if (strCheck.indexOf(key) == -1) return false; // Chave inválida
+        len = objTextBox.value.length;
+        for(i = 0; i < len; i++)
+            if ((objTextBox.value.charAt(i) != '0') && (objTextBox.value.charAt(i) != SeparadorDecimal)) break;
+        aux = '';
+        for(; i < len; i++)
+            if (strCheck.indexOf(objTextBox.value.charAt(i))!=-1) aux += objTextBox.value.charAt(i);
+        aux += key;
+        len = aux.length;
+        if (len == 0) objTextBox.value = '';
+        if (len == 1) objTextBox.value = '0'+ SeparadorDecimal + '0' + aux;
+        if (len == 2) objTextBox.value = '0'+ SeparadorDecimal + aux;
+        if (len > 2) {
+            aux2 = '';
+            for (j = 0, i = len - 3; i >= 0; i--) {
+                if (j == 3) {
+                    aux2 += SeparadorMilesimo;
+                    j = 0;
+                }
+                aux2 += aux.charAt(i);
+                j++;
+            }
+            objTextBox.value = '';
+            len2 = aux2.length;
+            for (i = len2 - 1; i >= 0; i--)
+            objTextBox.value += aux2.charAt(i);
+            objTextBox.value += SeparadorDecimal + aux.substr(len - 2, len);
+        }
+        return false;
+    }
+    
+    function MascaraFloat3(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){
+      var sep = 0;
+      var key = '';
+      var i = j = 0;
+      var len = len2 = 0;
+      var strCheck = '0123456789';
+      var aux = aux2 = '';
+      var whichCode = (window.Event) ? e.which : e.keyCode;
+      if (whichCode == 13 || whichCode == 8) return true;
+      key = String.fromCharCode(whichCode); // Valor para o código da Chave
+      if (strCheck.indexOf(key) == -1) return false; // Chave inválida
+      len = objTextBox.value.length;
+      for(i = 0; i < len; i++)
+      if ((objTextBox.value.charAt(i) != '0') && (objTextBox.value.charAt(i) != SeparadorDecimal)) break;
+      aux = '';
+      for(; i < len; i++)
+      if (strCheck.indexOf(objTextBox.value.charAt(i))!=-1) aux += objTextBox.value.charAt(i);
+      aux += key;
+      len = aux.length;
+      if (len == 0) objTextBox.value = '';
+      if (len == 1) objTextBox.value = '0'+ SeparadorDecimal + '00' + aux;
+      if (len == 2) objTextBox.value = '0'+ SeparadorDecimal + '0' + aux;
+      if (len == 3) objTextBox.value = '0'+ SeparadorDecimal + aux;
+      if (len > 3) {
+        aux2 = '';
+        for (j = 0, i = len - 4; i >= 0; i--) {
+          if (j == 3) {
+            aux2 += SeparadorMilesimo;
+            j = 0;
+          }
+          aux2 += aux.charAt(i);
+          j++;
+        }
+        objTextBox.value = '';
+        len2 = aux2.length;
+        for (i = len2 - 1; i >= 0; i--)
+        objTextBox.value += aux2.charAt(i);
+        objTextBox.value += SeparadorDecimal + aux.substr(len - 3, len);
+      }
+      return false;
+    }
+    
+    function fmtMoney(n, c, d, t){ 
+       var m = (c = Math.abs(c) + 1 ? c : 2, d = d || ",", t = t || ".", 
+          /(\d+)(?:(\.\d+)|)/.exec(n + "")), x = m[1].length > 3 ? m[1].length % 3 : 0; 
+       return (x ? m[1].substr(0, x) + t : "") + m[1].substr(x).replace(/(\d{3})(?=\d)/g, 
+          "$1" + t) + (c ? d + (+m[2] || 0).toFixed(c).substr(2) : ""); 
+    };
+
+    //Funções euro
+    function convert_euro(){
+      var campo_euro = parseFloat(forml.campo_euro.value.replace('.','').replace(',','.')*10); 
+      var cotacao_euro = parseFloat(forml.cotacao_euro.value.replace('.','').replace(',','.')); 
+      var soma_euro = ('' + ((campo_euro||0) * (cotacao_euro||0))); 
+      var total_euro = fmtMoney(soma_euro);
+      $("#euro").html('R$ '+ total_euro);
+    }
+
+    function zerar_euro(){
+      var retorna_euro = $('#cotacao_euro').val();
+      $('#campo_euro').val('1,00');
+      $("#euro").html('R$ ' + retorna_euro);
+      
+    }
+
+    // Funções dolar
+    function convert_dolar(){
+      var campo_dolar = parseFloat(forml.campo_euro.value.replace('.','').replace(',','.')*10); 
+      var cotacao_dolar = parseFloat(forml.cotacao_euro.value.replace('.','').replace(',','.')); 
+      var soma_dolar = ('' + ((campo_dolar||0) * (cotacao_dolar||0))); 
+      var total_dolar = fmtMoney(soma_dolar);
+      $("#dolar").html('R$ '+ total_dolar);
+    }
+
+    function zerar_dolar(){
+      var retorna_dolar = $('#cotacao_dolar').val();
+      $('#campo_dolar').val('1,00');
+      $("#dolar").html('R$ ' + retorna_dolar);
+      
+    }
+
+     // Funções bitcoin
+     function convert_bitcoin(){
+      
+      var campo_bitcoin = parseFloat(forml.campo_bitcoin.value.replace('.','').replace(',','.')*10); 
+      var cotacao_bitcoin = parseFloat(forml.cotacao_bitcoin.value.replace('.','').replace(',','.')); 
+      var soma_bitcoin = ('' + ((campo_bitcoin||0) * (cotacao_bitcoin||0))); 
+      var total_bitcoin = fmtMoney(soma_bitcoin);
+      $("#bit").html('R$ '+ total_bitcoin);
+    }
+
+    function zerar_bitcoin(){
+      var retorna_bitcoin = $('#cotacao_bitcoin').val();
+      $('#campo_bitcoin').val('1,00');
+      $("#bit").html('R$ ' + retorna_bitcoin);
+      
+    }
+
+     // Funções ethereum
+     function convert_ethereum(){
+      
+      var campo_ethereum = parseFloat(forml.campo_ethereum.value.replace('.','').replace(',','.')*10); 
+      var cotacao_ethereum = parseFloat(forml.cotacao_ethereum.value.replace('.','').replace(',','.')); 
+      var soma_ethereum = ('' + ((campo_ethereum||0) * (cotacao_ethereum||0))); 
+      var total_ethereum = fmtMoney(soma_ethereum);
+      $("#eth").html('R$ '+ total_ethereum);
+    }
+
+    function zerar_ethereum(){
+      var retorna_ethereum = $('#cotacao_ethereum').val();
+      $('#campo_ethereum').val('1,00');
+      $("#eth").html('R$ ' + retorna_ethereum);
+      
+    }
+  </script>
+
+</body>
+
+</html>
